@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include "array.h"
 
 //Forward declaration
 //class Aggregate;
@@ -54,14 +55,17 @@ public:
 //Subclass
 class BookShelf : public Aggregate {
 private:
-    Book *books;
-    int last = 0;
+    array<Book> books;
+    int last;
+    void resize();
 public:
-    BookShelf() {};
+    BookShelf() : books(1) {
+        last = 0;
+    }
 
     //
-    BookShelf(int maxsize) {
-        books = new Book[maxsize];
+    BookShelf(int maxsize) : books(maxsize) {
+        last = 0;
     }
 
     //
@@ -70,6 +74,9 @@ public:
     }
 
     void appendBook(Book book) {
+        if (last >= books.length) {   //If no more can be added to the array
+            resize();
+        }
         books[last] = book;
         last++;
     }

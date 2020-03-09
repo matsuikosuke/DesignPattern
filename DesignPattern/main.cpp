@@ -3,7 +3,7 @@
 
 int main() {
     //Chap1:Iterator
-    BookShelf bookshelf(10);
+    BookShelf bookshelf(1);
 
     Book book1("BOOK TEST 1");
     bookshelf.appendBook(book1);

@@ -53,7 +53,7 @@ public:
 };
 
 //Subclass
-class BookShelf : public Aggregate {
+class BookShelf : virtual public Aggregate {
 private:
     array<Book> books;
     int last;

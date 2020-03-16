@@ -39,6 +39,10 @@ int main() {
     p.printWeak();
     p.printStrong();
 
+    PrintBanner pp("Hello");
+    Print& ppp = pp;
+    ppp.printWeak();
+    ppp.printStrong();
 
     Print *pInheritance = new PrintBanner("Hello Inheritance");
     pInheritance->printWeak();

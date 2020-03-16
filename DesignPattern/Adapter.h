@@ -27,7 +27,7 @@ public:
 
 
 //Adapter
-class PrintBanner : public Banner, public Print
+class PrintBanner : public Banner, virtual public Print
 {
 public:
     PrintBanner(std::string string) : Banner(string) {}
@@ -37,7 +37,7 @@ public:
 };
 
 //Deligation Adapter
-class PrintBannerDeligation : public Print
+class PrintBannerDeligation : virtual public Print
 {
 private:
     Banner *banner;

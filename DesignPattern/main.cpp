@@ -1,8 +1,11 @@
 #include <iostream>
 #include "./Aggregate.h"
+#include "./Adapter.h"
 
 int main() {
-    //Chap1:Iterator
+    //Chapter1:Iterator
+    std::cout << "Chapter1:Iterator" << std::endl;
+
     BookShelf bookshelf(1);
 
     Book book1("BOOK TEST 1");
@@ -27,6 +30,24 @@ int main() {
         Book book = it->next();
         printf("%s\n", book.getName().c_str());
     }
+
+
+    //Chapter2:Adapter
+    std::cout << "Chapter2:Adapter" << std::endl;
+
+    PrintBanner p("Hello");
+    p.printWeak();
+    p.printStrong();
+
+
+    Print *pInheritance = new PrintBanner("Hello Inheritance");
+    pInheritance->printWeak();
+    pInheritance->printStrong();
+
+
+    Print *pDeligation = new PrintBannerDeligation("Hello Deligation");
+    pDeligation->printWeak();
+    pDeligation->printStrong();
 
     return 0;
 }

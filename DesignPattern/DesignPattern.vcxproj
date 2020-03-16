@@ -121,10 +121,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Adapter.h" />
     <ClInclude Include="Aggregate.h" />
     <ClInclude Include="array.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Adapter.cpp" />
     <ClCompile Include="Aggregate.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

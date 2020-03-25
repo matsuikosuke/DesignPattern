@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./Aggregate.h"
 #include "./Adapter.h"
+#include "./Template.h"
 
 int main() {
     //Chapter1:Iterator
@@ -52,6 +53,16 @@ int main() {
     Print *pDeligation = new PrintBannerDeligation("Hello Deligation");
     pDeligation->printWeak();
     pDeligation->printStrong();
+
+    //Chapter3:Template
+    CharDisplay *oneChar = new CharDisplay("H");
+    oneChar->display();
+
+    StringDisplay *oneString1 = new StringDisplay("Hello, World.");
+    oneString1->display();
+
+    StringDisplay *oneString2 = new StringDisplay("‚±‚ñ‚É‚¿‚Í");
+    oneString2->display();
 
     return 0;
 }

@@ -124,12 +124,16 @@
     <ClInclude Include="Adapter.h" />
     <ClInclude Include="Aggregate.h" />
     <ClInclude Include="array.h" />
+    <ClInclude Include="FactoryMethod.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Adapter.cpp" />
     <ClCompile Include="Aggregate.cpp" />
+    <ClCompile Include="FactoryMethod.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Template.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

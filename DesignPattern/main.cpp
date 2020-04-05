@@ -2,6 +2,8 @@
 #include "./Aggregate.h"
 #include "./Adapter.h"
 #include "./Template.h"
+#include "./FactoryMethod.h"
+#include "./Singleton.h"
 
 int main() {
     //Chapter1:Iterator
@@ -63,6 +65,30 @@ int main() {
 
     StringDisplay *oneString2 = new StringDisplay("こんにちは");
     oneString2->display();
+
+
+    //Chapter4:Factory Method
+    Factory* factory = new IDCardFactory();
+    Product* card1 = factory->create("田中");
+    Product* card2 = factory->create("鈴木");
+    Product* card3 = factory->create("木村");
+    card1->use();
+    card2->use();
+    card3->use();
+
+
+    //Chapter5:Singleton
+    Singleton* obj1 = Singleton::getInstance();
+    Singleton* obj2 = Singleton::getInstance();
+
+    if (obj1 == obj2) {
+        std::cout << "obj1とobj2同じはインスタンスです。" << std::endl;
+    }
+    else {
+        std::cout << "obj1とobj2同じはインスタンスではありません。" << std::endl;
+    }
+
+
 
     return 0;
 }
